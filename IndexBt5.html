@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất tiền gửi</title>
+
+</head>
+<body>
+<form>Số tiền ban đầu</form>
+<input id ="type_money" type="text">
+<form>Số tháng gửi</form>
+<input id ="type_month" type="text">
+<form>Lãi suất hàng tháng(%)</form>
+<input id ="type_rate" type="text">
+<input value ="SUBMIT" id ="SUB" type="button" onclick="myfunc()">
+<div id ="display"></div>
+<script>
+    function myfunc() {
+        let info_money = Number(document.getElementById('type_money').value);
+        let info_month = Number(document.getElementById('type_month').value);
+        let info_rate = Number(document.getElementById('type_rate').value);
+        // let result = info_money*(1+(info_rate/100))**info_month;
+        // let interest = result-info_money;
+        let interest = info_money * (Math.pow((info_rate/100 + 1),info_month) - 1);
+        document.getElementById('display').innerHTML='Số tiền lãi là:'+" "+interest;
+    }
+</script>
+
+<!--<script>-->
+<!--    let money=+prompt('Nhập số tiền gửi :');-->
+<!--    let month=+prompt('Nhập số tháng gửi :');-->
+<!--    let irate=+prompt('Nhập vào lãi suất hàng tháng :');-->
+
+<!--    let i= 1;-->
+<!--    let interest =money*(1+irate/100);-->
+<!--    money = money*rate% - money-->
+<!--   // console.log(interest);-->
+<!--    for(i=2;i<=month;i++){-->
+<!--        interest *=(1+irate/100);-->
+
+<!--    }-->
+<!--    document.write(' Số tiền lãi là ' + (interest-money));-->
+</script>
+</body>
+</html>
